@@ -1,0 +1,15 @@
+diff --git a/trimming.py b/trimming.py
+index d16ff1b..2bd31e4 100644
+--- a/trimming.py
++++ b/trimming.py
+@@ -10,8 +10,8 @@ def trimmed_mean(values, fraction):
+     去掉后若无剩余元素，抛 ValueError。
+     """
+     ordered = sorted(values)
+-    cut = int(len(ordered) * fraction)
+-    kept = ordered[cut:len(ordered) - cut]
++    cut = round(len(ordered) * fraction)
++    kept = ordered[cut:-cut]
+     return series.mean(kept)
+ 
+ 

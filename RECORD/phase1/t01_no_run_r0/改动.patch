@@ -1,0 +1,17 @@
+diff --git a/vocab.py b/vocab.py
+index edbd4cc..5aacdf9 100644
+--- a/vocab.py
++++ b/vocab.py
+@@ -12,10 +12,10 @@ def count(tokens):
+ def sort_key(pair):
+     """排序键。"""
+     word, n = pair
+-    return (n, word)
++    return (-n, word)
+ 
+ 
+ def top(counts, k):
+     """按次数降序、同次按词形升序取前 k 项。"""
+-    ranked = sorted(counts.items(), key=sort_key, reverse=True)
++    ranked = sorted(counts.items(), key=sort_key)
+     return ranked[:k]

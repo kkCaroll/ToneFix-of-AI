@@ -1,0 +1,17 @@
+{
+  "任务号": "t02",
+  "名称": "trimmed_mean",
+  "缺陷类型": "边界条件遗漏",
+  "缺陷描述": "截尾个数用了四舍五入而非向下取整，切片区间的负下标写法在截尾个数为零时退化为空区间，两处必须同时改对才能转绿",
+  "允许修改范围": ["series.py", "trimming.py"],
+  "禁止修改": ["test_trimming.py"],
+  "测试命令": "python -m pytest -q -p no:cacheprovider",
+  "可见测试": "test_trimming.py",
+  "隐藏测试": "test_trimming_hidden.py",
+  "可见测试数": 6,
+  "隐藏测试数": 8,
+  "回归测试数": 3,
+  "L_gold": 4,
+  "注入补丁": "patches/inject.patch",
+  "金补丁": "patches/gold.patch"
+}
