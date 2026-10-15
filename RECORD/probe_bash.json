@@ -1,0 +1,522 @@
+{
+  "时间": "2026-10-15T21:57:20",
+  "可执行文件": "C:\\Users\\28206\\AppData\\Roaming\\npm\\node_modules\\@anthropic-ai\\claude-code\\bin\\claude.exe",
+  "CLI版本": "2.1.220 (Claude Code)",
+  "模型": "deepseek-v4-pro",
+  "effort": "high",
+  "工作区": "C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws",
+  "提示词": "在当前工作目录下运行 python -m pytest，把命令的原始输出完整贴回来，不要总结。",
+  "超时秒": 180,
+  "各配置": {
+    "A_acceptEdits": {
+      "提示词": "在当前工作目录下运行 python -m pytest，把命令的原始输出完整贴回来，不要总结。",
+      "额外参数": [
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits"
+      ],
+      "argv": [
+        "-p",
+        "在当前工作目录下运行 python -m pytest，把命令的原始输出完整贴回来，不要总结。",
+        "--model",
+        "deepseek-v4-pro",
+        "--effort",
+        "high",
+        "--safe-mode",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits"
+      ],
+      "退出码": 0,
+      "超时": false,
+      "耗时秒": 6.2,
+      "stderr原文": "",
+      "判定": "全部被拒",
+      "判定明细": [
+        {
+          "命令": "python -m pytest",
+          "判定": "被拒",
+          "is_error": true,
+          "结果摘要": "This command requires approval"
+        }
+      ],
+      "解析": {
+        "行数": 102,
+        "工具调用直方图": {
+          "Bash": 1
+        },
+        "调用明细": [
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "python -m pytest",
+              "description": "Run pytest in current directory"
+            },
+            "id": "call_00_TpRoaf97S67NUxCGGVwc9839"
+          }
+        ],
+        "工具结果": [
+          {
+            "id": "call_00_TpRoaf97S67NUxCGGVwc9839",
+            "is_error": true,
+            "内容": "This command requires approval"
+          }
+        ],
+        "汇总": {
+          "成本USD": 0.030323000000000003,
+          "num_turns": 2,
+          "duration_ms": 4143,
+          "is_error": false,
+          "最终回答": "`python -m pytest` 需要你批准才能运行。请你批准该命令（或调整权限模式），我就可以执行并把原始输出完整贴回来。"
+        }
+      },
+      "原始流向": "RECORD\\probe_bash\\A_acceptEdits.stream.jsonl"
+    },
+    "B_allowedTools": {
+      "提示词": "在当前工作目录下运行 python -m pytest，把命令的原始输出完整贴回来，不要总结。",
+      "额外参数": [
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python -m pytest:*)"
+      ],
+      "argv": [
+        "-p",
+        "在当前工作目录下运行 python -m pytest，把命令的原始输出完整贴回来，不要总结。",
+        "--model",
+        "deepseek-v4-pro",
+        "--effort",
+        "high",
+        "--safe-mode",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python -m pytest:*)"
+      ],
+      "退出码": 0,
+      "超时": false,
+      "耗时秒": 22.2,
+      "stderr原文": "",
+      "判定": "命令可执行",
+      "判定明细": [
+        {
+          "命令": "python -m pytest",
+          "判定": "已执行，退出码非零",
+          "is_error": true,
+          "结果摘要": "Exit code 1 /c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory ============================= test session starts =============================\r platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r rootdir: C:\\Users\\28206\\AppData\\Local\\T"
+        }
+      ],
+      "解析": {
+        "行数": 42,
+        "工具调用直方图": {
+          "Bash": 1
+        },
+        "调用明细": [
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "python -m pytest",
+              "description": "Run pytest in current directory"
+            },
+            "id": "call_00_nyR06pmlDha2iFpAT3tI9040"
+          }
+        ],
+        "工具结果": [
+          {
+            "id": "call_00_nyR06pmlDha2iFpAT3tI9040",
+            "is_error": true,
+            "内容": "Exit code 1\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\n============================= test session starts =============================\r\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r\ncollected 2 items\r\n\r\ntest_calc.py .F                                                          [100%]\r\n\r\n================================== FAILURES ===================================\r\n___________________________ test_median_even_length ___________________________\r\n\r\n    def test_median_even_length():\r\n>       assert median([1, 2, 3, 4]) == 2.5\r\nE       assert 3 == 2.5\r\nE        +  where 3 = median([1, 2, 3, 4])\r\n\r\ntest_calc.py:9: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\r\n========================= 1 failed, 1 passed in 0.32s ========================="
+          }
+        ],
+        "汇总": {
+          "成本USD": 0.035683,
+          "num_turns": 2,
+          "duration_ms": 20467,
+          "is_error": false,
+          "最终回答": "```\n============================= test session starts =============================\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\ncollected 2 items\n\ntest_calc.py .F                                                          [100%]\n\n================================== FAILURES ===================================\n___________________________ test_median_even_length ___________________________\n\n    def test_median_even_length():\n>       assert median([1, 2, 3, 4]) == 2.5\nE       assert 3 == 2.5\nE        +  where 3 = median([1, 2, 3, 4])\n\ntest_calc.py:9: AssertionError\n=========================== short test summary info ===========================\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\n========================= 1 failed, 1 passed in 0.32s =========================\n```\n\nExit code 1"
+        }
+      },
+      "原始流向": "RECORD\\probe_bash\\B_allowedTools.stream.jsonl"
+    },
+    "C_scope": {
+      "提示词": "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+      "额外参数": [
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python -m pytest:*)"
+      ],
+      "argv": [
+        "-p",
+        "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+        "--model",
+        "deepseek-v4-pro",
+        "--effort",
+        "high",
+        "--safe-mode",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python -m pytest:*)"
+      ],
+      "退出码": 0,
+      "超时": false,
+      "耗时秒": 26.2,
+      "stderr原文": "",
+      "判定": "命令可执行",
+      "判定明细": [
+        {
+          "命令": "echo probe-echo",
+          "判定": "已执行",
+          "is_error": false,
+          "结果摘要": "/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory probe-echo"
+        },
+        {
+          "命令": "python -m pytest",
+          "判定": "已执行，退出码非零",
+          "is_error": true,
+          "结果摘要": "Exit code 1 /c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory ============================= test session starts =============================\r platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r rootdir: C:\\Users\\28206\\AppData\\Local\\T"
+        }
+      ],
+      "解析": {
+        "行数": 254,
+        "工具调用直方图": {
+          "Bash": 2
+        },
+        "调用明细": [
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "echo probe-echo",
+              "description": "Run echo probe-echo command"
+            },
+            "id": "call_00_cOh2XqO4pAxHVDpmUGbP0207"
+          },
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "python -m pytest",
+              "description": "Run python -m pytest"
+            },
+            "id": "call_00_HqVU0txDmL0mi7zFOyHa5970"
+          }
+        ],
+        "工具结果": [
+          {
+            "id": "call_00_cOh2XqO4pAxHVDpmUGbP0207",
+            "is_error": false,
+            "内容": "/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\nprobe-echo"
+          },
+          {
+            "id": "call_00_HqVU0txDmL0mi7zFOyHa5970",
+            "is_error": true,
+            "内容": "Exit code 1\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\n============================= test session starts =============================\r\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r\ncollected 2 items\r\n\r\ntest_calc.py .F                                                          [100%]\r\n\r\n================================== FAILURES ===================================\r\n___________________________ test_median_even_length ___________________________\r\n\r\n    def test_median_even_length():\r\n>       assert median([1, 2, 3, 4]) == 2.5\r\nE       assert 3 == 2.5\r\nE        +  where 3 = median([1, 2, 3, 4])\r\n\r\ntest_calc.py:9: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\r\n========================= 1 failed, 1 passed in 0.21s ========================="
+          }
+        ],
+        "汇总": {
+          "成本USD": 0.051732,
+          "num_turns": 3,
+          "duration_ms": 24614,
+          "is_error": false,
+          "最终回答": "两条命令均已运行，输出分别如下：\n\n## 第一条命令：`echo probe-echo`\n\n```\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\nprobe-echo\n```\n\n命令执行成功，输出为 `probe-echo`（首行是 shell 启动时 `.bashrc` 中 conda 初始化脚本缺失的提示，与命令本身无关）。\n\n## 第二条命令：`python -m pytest`\n\n```\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\n============================= test session starts =============================\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\ncollected 2 items\n\ntest_calc.py .F                                                          [100%]\n\n================================== FAILURES ===================================\n___________________________ test_median_even_length ___________________________\n\n    def test_median_even_length():\n>       assert median([1, 2, 3, 4]) == 2.5\nE       assert 3 == 2.5\nE        +  where 3 = median([1, 2, 3, 4])\n\ntest_calc.py:9: AssertionError\n=========================== short test summary info ===========================\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\n========================= 1 failed, 1 passed in 0.21s =========================\n```\n\n命令可运行，但退出码为 1：共收集 2 个测试，1 个通过、1 个失败（`test_median_even_length` 期望 `median([1,2,3,4])` 为 2.5，实际返回 3）。"
+        }
+      },
+      "原始流向": "RECORD\\probe_bash\\C_scope.stream.jsonl"
+    },
+    "D_scope_space": {
+      "提示词": "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+      "额外参数": [
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python -m pytest *)"
+      ],
+      "argv": [
+        "-p",
+        "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+        "--model",
+        "deepseek-v4-pro",
+        "--effort",
+        "high",
+        "--safe-mode",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python -m pytest *)"
+      ],
+      "退出码": 0,
+      "超时": false,
+      "耗时秒": 26.3,
+      "stderr原文": "",
+      "判定": "命令可执行",
+      "判定明细": [
+        {
+          "命令": "echo probe-echo",
+          "判定": "已执行",
+          "is_error": false,
+          "结果摘要": "/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory probe-echo"
+        },
+        {
+          "命令": "python -m pytest",
+          "判定": "已执行，退出码非零",
+          "is_error": true,
+          "结果摘要": "Exit code 1 /c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory ============================= test session starts =============================\r platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r rootdir: C:\\Users\\28206\\AppData\\Local\\T"
+        }
+      ],
+      "解析": {
+        "行数": 275,
+        "工具调用直方图": {
+          "Bash": 2
+        },
+        "调用明细": [
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "echo probe-echo",
+              "description": "Print test string to stdout"
+            },
+            "id": "call_00_dyPJHzRDkTNn3Z8Agv4n8858"
+          },
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "python -m pytest",
+              "description": "Run pytest module"
+            },
+            "id": "call_00_lY4u5MQfCU0H8gAXnrYM0887"
+          }
+        ],
+        "工具结果": [
+          {
+            "id": "call_00_dyPJHzRDkTNn3Z8Agv4n8858",
+            "is_error": false,
+            "内容": "/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\nprobe-echo"
+          },
+          {
+            "id": "call_00_lY4u5MQfCU0H8gAXnrYM0887",
+            "is_error": true,
+            "内容": "Exit code 1\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\n============================= test session starts =============================\r\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r\ncollected 2 items\r\n\r\ntest_calc.py .F                                                          [100%]\r\n\r\n================================== FAILURES ===================================\r\n___________________________ test_median_even_length ___________________________\r\n\r\n    def test_median_even_length():\r\n>       assert median([1, 2, 3, 4]) == 2.5\r\nE       assert 3 == 2.5\r\nE        +  where 3 = median([1, 2, 3, 4])\r\n\r\ntest_calc.py:9: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\r\n========================= 1 failed, 1 passed in 0.20s ========================="
+          }
+        ],
+        "汇总": {
+          "成本USD": 0.052457,
+          "num_turns": 3,
+          "duration_ms": 24817,
+          "is_error": false,
+          "最终回答": "两条命令的输出如下：\n\n**第一条命令 `echo probe-echo`：**\n```\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\nprobe-echo\n```\n\n**第二条命令 `python -m pytest`：**\n```\n/c/Users/28206/.bashrc: line 1: /c/Users/28206/Anaconda3/etc/profile.d/conda.sh: No such file or directory\n============================= test session starts =============================\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\ncollected 2 items\n\ntest_calc.py .F                                                          [100%]\n\n================================== FAILURES ===================================\n___________________________ test_median_even_length ___________________________\n\n    def test_median_even_length():\n>       assert median([1, 2, 3, 4]) == 2.5\nE       assert 3 == 2.5\nE        +  where 3 = median([1, 2, 3, 4])\n\ntest_calc.py:9: AssertionError\n=========================== short test summary info ===========================\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\n========================= 1 failed, 1 passed in 0.20s =========================\n```\n\n补充说明：两条命令都能正常运行。第一条输出 `probe-echo` 成功；第二条 `python -m pytest` 已执行，但有一个测试用例失败（`test_median_even_length`，断言 `median([1, 2, 3, 4]) == 2.5` 失败，实际返回 `3`），退出码为 1。另外两条命令的开头都打印了一条 bashrc 警告：`conda.sh: No such file or directory`，这是 shell 初始化脚本的环境提示，不影响命令本身执行。"
+        }
+      },
+      "原始流向": "RECORD\\probe_bash\\D_scope_space.stream.jsonl"
+    },
+    "E_scope_prefix": {
+      "提示词": "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+      "额外参数": [
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python:*)"
+      ],
+      "argv": [
+        "-p",
+        "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+        "--model",
+        "deepseek-v4-pro",
+        "--effort",
+        "high",
+        "--safe-mode",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "acceptEdits",
+        "--allowedTools",
+        "Bash(python:*)"
+      ],
+      "退出码": 0,
+      "超时": false,
+      "耗时秒": 32.6,
+      "stderr原文": "",
+      "判定": "命令可执行",
+      "判定明细": [
+        {
+          "命令": "echo probe-echo",
+          "判定": "已执行",
+          "is_error": false,
+          "结果摘要": "probe-echo"
+        },
+        {
+          "命令": "python -m pytest",
+          "判定": "已执行，退出码非零",
+          "is_error": true,
+          "结果摘要": "Exit code 1 ============================= test session starts =============================\r platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r rootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r collected 2 items\r \r test_calc.py .F                                            "
+        }
+      ],
+      "解析": {
+        "行数": 90,
+        "工具调用直方图": {
+          "Bash": 2
+        },
+        "调用明细": [
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "echo probe-echo",
+              "description": "Print probe-echo text"
+            },
+            "id": "call_00_7wDNzEw1DjL0iMKUjjt29036"
+          },
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "python -m pytest",
+              "description": "Run pytest via python module"
+            },
+            "id": "call_00_kBPtWIJ9QHXvsIEnYf3y9029"
+          }
+        ],
+        "工具结果": [
+          {
+            "id": "call_00_7wDNzEw1DjL0iMKUjjt29036",
+            "is_error": false,
+            "内容": "probe-echo"
+          },
+          {
+            "id": "call_00_kBPtWIJ9QHXvsIEnYf3y9029",
+            "is_error": true,
+            "内容": "Exit code 1\n============================= test session starts =============================\r\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r\ncollected 2 items\r\n\r\ntest_calc.py .F                                                          [100%]\r\n\r\n================================== FAILURES ===================================\r\n___________________________ test_median_even_length ___________________________\r\n\r\n    def test_median_even_length():\r\n>       assert median([1, 2, 3, 4]) == 2.5\r\nE       assert 3 == 2.5\r\nE        +  where 3 = median([1, 2, 3, 4])\r\n\r\ntest_calc.py:9: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\r\n========================= 1 failed, 1 passed in 0.10s ========================="
+          }
+        ],
+        "汇总": {
+          "成本USD": 0.04364,
+          "num_turns": 3,
+          "duration_ms": 31138,
+          "is_error": false,
+          "最终回答": "两条命令的输出分别如下：\n\n**第一条：`echo probe-echo`**\n\n```\nprobe-echo\n```\n\n**第二条：`python -m pytest`**\n\n```\n============================= test session starts =============================\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\ncollected 2 items\n\ntest_calc.py .F                                                          [100%]\n\n================================== FAILURES ===================================\n___________________________ test_median_even_length ___________________________\n\n    def test_median_even_length():\n>       assert median([1, 2, 3, 4]) == 2.5\nE       assert 3 == 2.5\nE        +  where 3 = median([1, 2, 3, 4])\n\ntest_calc.py:9: AssertionError\n=========================== short test summary info ===========================\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\n========================= 1 failed, 1 passed in 0.10s =========================\n```\n\n两条命令都能正常运行。第二条命令（pytest）以退出码 1 结束，原因是 1 个测试失败、1 个通过：`test_median_even_length` 断言 `median([1, 2, 3, 4]) == 2.5` 失败，实际返回了 `3`。"
+        }
+      },
+      "原始流向": "RECORD\\probe_bash\\E_scope_prefix.stream.jsonl"
+    },
+    "F_manual_scope": {
+      "提示词": "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+      "额外参数": [
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "manual",
+        "--allowedTools",
+        "Bash(python -m pytest:*)"
+      ],
+      "argv": [
+        "-p",
+        "依次在当前工作目录下运行两条命令，先 echo probe-echo，再 python -m pytest。把两条命令的输出分别贴回来。若某条命令无法运行，原样说明原因。",
+        "--model",
+        "deepseek-v4-pro",
+        "--effort",
+        "high",
+        "--safe-mode",
+        "--output-format",
+        "stream-json",
+        "--verbose",
+        "--tools",
+        "Read,Glob,Grep,Edit,Write,Bash",
+        "--permission-mode",
+        "manual",
+        "--allowedTools",
+        "Bash(python -m pytest:*)"
+      ],
+      "退出码": 0,
+      "超时": false,
+      "耗时秒": 38.8,
+      "stderr原文": "",
+      "判定": "命令可执行",
+      "判定明细": [
+        {
+          "命令": "echo probe-echo",
+          "判定": "已执行",
+          "is_error": false,
+          "结果摘要": "probe-echo"
+        },
+        {
+          "命令": "python -m pytest",
+          "判定": "已执行，退出码非零",
+          "is_error": true,
+          "结果摘要": "Exit code 1 ============================= test session starts =============================\r platform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r rootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r collected 2 items\r \r test_calc.py .F                                            "
+        }
+      ],
+      "解析": {
+        "行数": 99,
+        "工具调用直方图": {
+          "Bash": 2
+        },
+        "调用明细": [
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "echo probe-echo",
+              "description": "Echo probe-echo string"
+            },
+            "id": "call_00_4pY0ySgSDnz5DCjfNeSz2263"
+          },
+          {
+            "工具": "Bash",
+            "入参": {
+              "command": "python -m pytest",
+              "description": "Run pytest via python module"
+            },
+            "id": "call_00_8IxQXmpSgYZDewLFEFF65447"
+          }
+        ],
+        "工具结果": [
+          {
+            "id": "call_00_4pY0ySgSDnz5DCjfNeSz2263",
+            "is_error": false,
+            "内容": "probe-echo"
+          },
+          {
+            "id": "call_00_8IxQXmpSgYZDewLFEFF65447",
+            "is_error": true,
+            "内容": "Exit code 1\n============================= test session starts =============================\r\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\r\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\r\ncollected 2 items\r\n\r\ntest_calc.py .F                                                          [100%]\r\n\r\n================================== FAILURES ===================================\r\n___________________________ test_median_even_length ___________________________\r\n\r\n    def test_median_even_length():\r\n>       assert median([1, 2, 3, 4]) == 2.5\r\nE       assert 3 == 2.5\r\nE        +  where 3 = median([1, 2, 3, 4])\r\n\r\ntest_calc.py:9: AssertionError\r\n=========================== short test summary info ===========================\r\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\r\n========================= 1 failed, 1 passed in 0.13s ========================="
+          }
+        ],
+        "汇总": {
+          "成本USD": 0.043625,
+          "num_turns": 3,
+          "duration_ms": 37576,
+          "is_error": false,
+          "最终回答": "两条命令的输出如下：\n\n**第一条命令 `echo probe-echo`**\n\n```\nprobe-echo\n```\n\n**第二条命令 `python -m pytest`**\n\n```\n============================= test session starts =============================\nplatform win32 -- Python 3.14.6, pytest-9.1.1, pluggy-1.7.0\nrootdir: C:\\Users\\28206\\AppData\\Local\\Temp\\nlp-probe-422d38m0\\ws\ncollected 2 items\n\ntest_calc.py .F                                                          [100%]\n\n================================== FAILURES ===================================\n___________________________ test_median_even_length ___________________________\n\n    def test_median_even_length():\n>       assert median([1, 2, 3, 4]) == 2.5\nE       assert 3 == 2.5\nE        +  where 3 = median([1, 2, 3, 4])\n\ntest_calc.py:9: AssertionError\n=========================== short test summary info ===========================\nFAILED test_calc.py::test_median_even_length - assert 3 == 2.5\n========================= 1 failed, 1 passed in 0.13s =========================\n```\n\n补充说明：两条命令都能运行。第一条正常输出 `probe-echo`；第二条 pytest 运行成功但退出码为 1，因为有 1 个测试失败（`test_median_even_length` 期望 `median([1, 2, 3, 4]) == 2.5`，实际返回了 `3`），另外 1 个测试通过。"
+        }
+      },
+      "原始流向": "RECORD\\probe_bash\\F_manual_scope.stream.jsonl"
+    }
+  }
+}
