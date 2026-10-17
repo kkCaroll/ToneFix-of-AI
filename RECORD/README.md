@@ -15,7 +15,20 @@ RECORD/
       改动.patch               相对起点提交的差异
       改动行数.txt             逐文件的新增与删除行数
       判分_可见.txt            脚手架重跑可见测试的尾部输出
+  probe_difficulty/          阶段一补充 难度探测第一轮，自变量为代码规模
+    summary.json             三次 episode 的机器可读汇总
+    <任务>_<臂>_r<重复>/     三件证据，同阶段一
+  probe_defect_count/        阶段一补充 难度探测第二轮，自变量为缺陷数量
+    summary.json             八次 episode 的机器可读汇总
+    <任务>_<臂>_r<重复>/     五件证据
+      round1.jsonl             原始流，逐行事件
+      改动.patch               相对起点提交的差异
+      判分.json                该次 episode 的全部判分量
+      判分_可见.txt            重跑可见测试的完整输出
+      判分_隐藏.txt            重跑隐藏测试的完整输出
 ```
+
+`probe_defect_count` 起每次 episode 多出两件证据。判分改存完整输出而非尾部，隐藏测试单独留一份，便于事后核对 `overfit_rate` 是否真为零。
 
 ## 规矩
 

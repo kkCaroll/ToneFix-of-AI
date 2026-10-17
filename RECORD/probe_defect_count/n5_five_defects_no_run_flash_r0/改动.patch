@@ -1,0 +1,65 @@
+diff --git a/config.py b/config.py
+index ff08d3a..85d4bc8 100644
+--- a/config.py
++++ b/config.py
+@@ -6,7 +6,7 @@ DEFAULT_PAGE_SIZE = 2
+ 
+ def resolve_k(k):
+     """缺省时换成默认的词项个数。"""
+-    return DEFAULT_PAGE_SIZE if k is None else k
++    return DEFAULT_K if k is None else k
+ 
+ 
+ def resolve_page_size(size):
+diff --git a/paging.py b/paging.py
+index cd33dad..3610b9b 100644
+--- a/paging.py
++++ b/paging.py
+@@ -11,4 +11,4 @@ def page_count(total, size):
+     """总页数。页大小非正时抛 ValueError。"""
+     if size <= 0:
+         raise ValueError("页大小必须为正")
+-    return total // size
++    return (total + size - 1) // size
+diff --git a/ranking.py b/ranking.py
+index 4390b4b..6c08523 100644
+--- a/ranking.py
++++ b/ranking.py
+@@ -12,9 +12,9 @@ def counts(words):
+ def order(item):
+     """排序键。"""
+     word, n = item
+-    return (n, word)
++    return (-n, word)
+ 
+ 
+ def ranked(table, k):
+     """取前 k 项，按次数降序、同次按词形升序。"""
+-    return sorted(table.items(), key=order, reverse=True)[:k]
++    return sorted(table.items(), key=order)[:k]
+diff --git a/report.py b/report.py
+index 652287f..1f4efdc 100644
+--- a/report.py
++++ b/report.py
+@@ -25,7 +25,7 @@ def keyword_report(text, k=None, drop_stopwords=False, use_cache=True):
+         table = ranking.counts(words)
+         top = ranking.ranked(table, size)
+         return {"count": len(words),
+-                "top": [(w, n, round(n / len(table), 4)) for w, n in top]}
++                "top": [(w, n, round(n / len(words), 4)) for w, n in top]}
+ 
+     if not use_cache:
+         return build()
+diff --git a/tokenizer.py b/tokenizer.py
+index a17d7f2..5cf0e9d 100644
+--- a/tokenizer.py
++++ b/tokenizer.py
+@@ -2,7 +2,7 @@
+ 
+ import re
+ 
+-TOKEN = re.compile(r"[A-Za-z]+")
++TOKEN = re.compile(r"[A-Za-z]+(?:['-][A-Za-z]+)*")
+ 
+ 
+ def tokenize(text):

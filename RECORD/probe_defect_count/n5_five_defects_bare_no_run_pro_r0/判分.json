@@ -1,0 +1,21 @@
+{
+ "任务": "n5_five_defects",
+ "臂": "bare_no_run_pro_r0",
+ "缺陷数": 5,
+ "L_model": 14,
+ "L_gold": 12,
+ "EditRatio": 1.167,
+ "改动文件数": 5,
+ "改动文件": [
+  "config.py",
+  "paging.py",
+  "ranking.py",
+  "report.py",
+  "tokenizer.py"
+ ],
+ "可见测试": "10 passed in 0.06s",
+ "隐藏测试": "8 passed in 0.03s",
+ "可见失败": [],
+ "隐藏失败": [],
+ "结局": "PASS_R1"
+}
