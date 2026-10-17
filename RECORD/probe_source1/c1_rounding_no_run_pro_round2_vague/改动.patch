@@ -1,0 +1,30 @@
+diff --git a/paging.py b/paging.py
+index 3610b9b..d249a2e 100644
+--- a/paging.py
++++ b/paging.py
+@@ -3,6 +3,8 @@
+ 
+ def page(items, number, size):
+     """取第 number 页，页码从 1 开始。越界返回空列表。"""
++    if number < 1:
++        return []
+     start = (number - 1) * size
+     return list(items[start:start + size])
+ 
+diff --git a/report.py b/report.py
+index d5191dc..426099f 100644
+--- a/report.py
++++ b/report.py
+@@ -11,7 +11,11 @@ import tokenizer
+ 
+ def share(n, total):
+     """占比，按十进制四舍五入保留四位小数。"""
+-    return round(n / total, 4)
++    scaled = n * 10000
++    quotient, remainder = divmod(scaled, total)
++    if remainder * 2 >= total:
++        quotient += 1
++    return quotient / 10000
+ 
+ 
+ 

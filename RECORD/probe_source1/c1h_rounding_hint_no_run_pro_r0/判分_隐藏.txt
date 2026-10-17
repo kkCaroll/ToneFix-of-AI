@@ -1,0 +1,27 @@
+FF                                                                       [100%]
+================================== FAILURES ===================================
+_____________________ test_half_up_at_the_fourth_decimal ______________________
+
+    def test_half_up_at_the_fourth_decimal():
+        text = " ".join(["alpha"] * 29 + ["beta"] * 2 + ["gamma"])
+        result = keyword_report(text, k=3, use_cache=False)
+>       assert [share for _, _, share in result["top"]] == [0.9063, 0.0625, 0.0313]
+E       assert [0.9062, 0.0625, 0.0312] == [0.9063, 0.0625, 0.0313]
+E         
+E         At index 0 diff: 0.9062 != 0.9063
+E         Use -v to get more diff
+
+test_report_hidden.py:9: AssertionError
+________________________ test_half_up_on_a_rarer_word _________________________
+
+    def test_half_up_on_a_rarer_word():
+        text = " ".join(["alpha"] * 5 + ["beta"] * 27)
+        result = keyword_report(text, k=2, use_cache=False)
+>       assert result["top"][-1][2] == 0.1563
+E       assert 0.1562 == 0.1563
+
+test_report_hidden.py:15: AssertionError
+=========================== short test summary info ===========================
+FAILED test_report_hidden.py::test_half_up_at_the_fourth_decimal - assert [0....
+FAILED test_report_hidden.py::test_half_up_on_a_rarer_word - assert 0.1562 ==...
+2 failed in 0.06s

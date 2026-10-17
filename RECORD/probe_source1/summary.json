@@ -1,0 +1,249 @@
+{
+ "说明": "来源一小样本校准。首轮判据为可见与隐藏的并集。",
+ "任务包": "tasks/c1_rounding, tasks/c2_token_boundary, tasks/c3_page_guard",
+ "episodes": [
+  {
+   "任务": "c1_rounding",
+   "回合类型": "首轮",
+   "条件": "",
+   "回合数": 17,
+   "耗时秒": 25.2,
+   "超时": false,
+   "成本USD": 0.11134899999999999,
+   "工具直方图": {
+    "Glob": 2,
+    "Read": 9,
+    "Edit": 1,
+    "Grep": 4
+   },
+   "Bash尝试": 0,
+   "Bash未启用回执": 0,
+   "可见测试": "6 passed in 0.03s",
+   "隐藏测试": "2 failed in 0.07s",
+   "可见失败": [],
+   "隐藏失败": [
+    "FAILED test_report_hidden.py::test_half_up_at_the_fourth_decimal",
+    "FAILED test_report_hidden.py::test_half_up_on_a_rarer_word"
+   ],
+   "L_model": 2,
+   "L_gold": 8,
+   "EditRatio": 0.25,
+   "改动文件": [
+    "report.py"
+   ],
+   "结局": "FAIL_R1"
+  },
+  {
+   "任务": "c1_rounding",
+   "回合类型": "首轮",
+   "条件": "",
+   "回合数": 22,
+   "耗时秒": 40.8,
+   "超时": false,
+   "成本USD": 0.179728,
+   "工具直方图": {
+    "Glob": 4,
+    "Read": 4,
+    "Edit": 1,
+    "Grep": 12
+   },
+   "Bash尝试": 0,
+   "Bash未启用回执": 0,
+   "可见测试": "6 passed in 0.02s",
+   "隐藏测试": "2 failed in 0.07s",
+   "可见失败": [],
+   "隐藏失败": [
+    "FAILED test_report_hidden.py::test_half_up_at_the_fourth_decimal",
+    "FAILED test_report_hidden.py::test_half_up_on_a_rarer_word"
+   ],
+   "L_model": 2,
+   "L_gold": 8,
+   "EditRatio": 0.25,
+   "改动文件": [
+    "report.py"
+   ],
+   "结局": "FAIL_R1"
+  },
+  {
+   "任务": "c1_rounding",
+   "回合类型": "首轮",
+   "条件": "",
+   "回合数": 6,
+   "耗时秒": 13.5,
+   "超时": false,
+   "成本USD": 0.068463,
+   "工具直方图": {
+    "Glob": 1,
+    "Read": 2,
+    "Edit": 1,
+    "Bash": 1
+   },
+   "Bash尝试": 1,
+   "Bash未启用回执": 1,
+   "可见测试": "6 passed in 0.03s",
+   "隐藏测试": "2 failed in 0.07s",
+   "可见失败": [],
+   "隐藏失败": [
+    "FAILED test_report_hidden.py::test_half_up_at_the_fourth_decimal",
+    "FAILED test_report_hidden.py::test_half_up_on_a_rarer_word"
+   ],
+   "L_model": 2,
+   "L_gold": 8,
+   "EditRatio": 0.25,
+   "改动文件": [
+    "report.py"
+   ],
+   "结局": "FAIL_R1"
+  },
+  {
+   "任务": "c1_rounding",
+   "回合类型": "第二轮",
+   "条件": "失败信息含隐藏输出",
+   "回合数": 20,
+   "耗时秒": 77.3,
+   "超时": false,
+   "成本USD": 0.288294,
+   "工具直方图": {
+    "Glob": 4,
+    "Read": 11,
+    "Edit": 2,
+    "Grep": 2
+   },
+   "Bash尝试": 0,
+   "Bash未启用回执": 0,
+   "可见测试": "6 passed in 0.13s",
+   "隐藏测试": "2 passed in 0.02s",
+   "可见失败": [],
+   "隐藏失败": [],
+   "L_model": 7,
+   "L_gold": 6,
+   "EditRatio": 1.167,
+   "改动文件": [
+    "report.py"
+   ],
+   "结局": "PASS_R2"
+  },
+  {
+   "任务": "c1_rounding",
+   "回合类型": "第二轮",
+   "条件": "只报外部检查数量",
+   "回合数": null,
+   "耗时秒": 300.6,
+   "超时": true,
+   "成本USD": null,
+   "工具直方图": {
+    "Glob": 5,
+    "Read": 12,
+    "Bash": 1,
+    "Grep": 2,
+    "Edit": 2
+   },
+   "Bash尝试": 1,
+   "Bash未启用回执": 1,
+   "可见测试": "6 passed in 0.06s",
+   "隐藏测试": "2 passed in 0.02s",
+   "可见失败": [],
+   "隐藏失败": [],
+   "L_model": 8,
+   "L_gold": 6,
+   "EditRatio": 1.333,
+   "改动文件": [
+    "paging.py",
+    "report.py"
+   ],
+   "结局": "PASS_R2"
+  },
+  {
+   "任务": "c1h_rounding_hint",
+   "回合类型": "首轮",
+   "条件": "",
+   "回合数": 19,
+   "耗时秒": 71.3,
+   "超时": false,
+   "成本USD": 0.125695,
+   "工具直方图": {
+    "Glob": 3,
+    "Read": 10,
+    "Edit": 1,
+    "Grep": 4
+   },
+   "Bash尝试": 0,
+   "Bash未启用回执": 0,
+   "可见测试": "6 passed in 0.02s",
+   "隐藏测试": "2 failed in 0.06s",
+   "可见失败": [],
+   "隐藏失败": [
+    "FAILED test_report_hidden.py::test_half_up_at_the_fourth_decimal",
+    "FAILED test_report_hidden.py::test_half_up_on_a_rarer_word"
+   ],
+   "L_model": 2,
+   "L_gold": 8,
+   "EditRatio": 0.25,
+   "改动文件": [
+    "report.py"
+   ],
+   "结局": "FAIL_R1"
+  },
+  {
+   "任务": "c2_token_boundary",
+   "回合类型": "首轮",
+   "条件": "",
+   "回合数": 24,
+   "耗时秒": 140.8,
+   "超时": false,
+   "成本USD": 0.136823,
+   "工具直方图": {
+    "Glob": 6,
+    "Read": 8,
+    "Edit": 1,
+    "Grep": 8
+   },
+   "Bash尝试": 0,
+   "Bash未启用回执": 0,
+   "可见测试": "6 passed in 0.03s",
+   "隐藏测试": "2 failed, 1 passed in 0.17s",
+   "可见失败": [],
+   "隐藏失败": [
+    "FAILED test_report_hidden.py::test_trailing_hyphen_is_not_part_of_token",
+    "FAILED test_report_hidden.py::test_trailing_apostrophe_is_not_part_of_token"
+   ],
+   "L_model": 8,
+   "L_gold": 6,
+   "EditRatio": 1.333,
+   "改动文件": [
+    "ranking.py"
+   ],
+   "结局": "FAIL_R1"
+  },
+  {
+   "任务": "c3_page_guard",
+   "回合类型": "首轮",
+   "条件": "",
+   "回合数": 7,
+   "耗时秒": 11.3,
+   "超时": false,
+   "成本USD": 0.054271999999999994,
+   "工具直方图": {
+    "Glob": 1,
+    "Read": 3,
+    "Edit": 1,
+    "Bash": 1
+   },
+   "Bash尝试": 1,
+   "Bash未启用回执": 1,
+   "可见测试": "6 passed in 0.02s",
+   "隐藏测试": "1 failed, 2 passed in 0.07s",
+   "可见失败": [],
+   "隐藏失败": [
+    "FAILED test_report_hidden.py::test_page_count_rejects_non_positive_size"
+   ],
+   "L_model": 2,
+   "L_gold": 4,
+   "EditRatio": 0.5,
+   "改动文件": [
+    "config.py"
+   ],
+   "结局": "FAIL_R1"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "任务": "c2_token_boundary",
+ "臂": "no_run_pro_r0",
+ "L_model": 8,
+ "L_gold": 6,
+ "EditRatio": 1.333,
+ "改动文件数": 1,
+ "改动文件": [
+  "ranking.py"
+ ],
+ "可见测试": "6 passed in 0.03s",
+ "隐藏测试": "2 failed, 1 passed in 0.17s",
+ "可见失败": [],
+ "隐藏失败": [
+  "FAILED test_report_hidden.py::test_trailing_hyphen_is_not_part_of_token",
+  "FAILED test_report_hidden.py::test_trailing_apostrophe_is_not_part_of_token"
+ ],
+ "可见全绿": true,
+ "overfit": true,
+ "结局": "FAIL_R1"
+}

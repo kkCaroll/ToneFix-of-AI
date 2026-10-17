@@ -1,0 +1,23 @@
+F..                                                                      [100%]
+================================== FAILURES ===================================
+__________________ test_page_count_rejects_non_positive_size __________________
+
+    def test_page_count_rejects_non_positive_size():
+        with pytest.raises(ValueError):
+>           page_count(5, 0)
+
+test_report_hidden.py:11: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+total = 5, size = 0
+
+    def page_count(total, size):
+        """总页数。页大小非正时抛 ValueError。"""
+>       return (total + size - 1) // size
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       ZeroDivisionError: division by zero
+
+paging.py:12: ZeroDivisionError
+=========================== short test summary info ===========================
+FAILED test_report_hidden.py::test_page_count_rejects_non_positive_size - Zer...
+1 failed, 2 passed in 0.07s

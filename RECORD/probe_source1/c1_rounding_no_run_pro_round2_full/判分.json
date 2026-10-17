@@ -1,0 +1,16 @@
+{
+ "任务": "c1_rounding",
+ "臂": "round2_full",
+ "重放编辑数": 2,
+ "L_model": 7,
+ "L_gold": 6,
+ "EditRatio": 1.167,
+ "改动文件": [
+  "report.py"
+ ],
+ "可见测试": "6 passed in 0.13s",
+ "隐藏测试": "2 passed in 0.02s",
+ "可见失败": [],
+ "隐藏失败": [],
+ "结局": "PASS_R2"
+}

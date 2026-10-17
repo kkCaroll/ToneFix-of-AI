@@ -1,0 +1,24 @@
+diff --git a/config.py b/config.py
+index 85d4bc8..ff08d3a 100644
+--- a/config.py
++++ b/config.py
+@@ -6,7 +6,7 @@ DEFAULT_PAGE_SIZE = 2
+ 
+ def resolve_k(k):
+     """缺省时换成默认的词项个数。"""
+-    return DEFAULT_K if k is None else k
++    return DEFAULT_PAGE_SIZE if k is None else k
+ 
+ 
+ def resolve_page_size(size):
+diff --git a/paging.py b/paging.py
+index 3610b9b..27f76de 100644
+--- a/paging.py
++++ b/paging.py
+@@ -9,6 +9,4 @@ def page(items, number, size):
+ 
+ def page_count(total, size):
+     """总页数。页大小非正时抛 ValueError。"""
+-    if size <= 0:
+-        raise ValueError("页大小必须为正")
+     return (total + size - 1) // size

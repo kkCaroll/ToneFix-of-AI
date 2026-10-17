@@ -1,0 +1,20 @@
+{
+ "任务": "c3_page_guard",
+ "臂": "no_run_pro_r0",
+ "L_model": 2,
+ "L_gold": 4,
+ "EditRatio": 0.5,
+ "改动文件数": 1,
+ "改动文件": [
+  "config.py"
+ ],
+ "可见测试": "6 passed in 0.02s",
+ "隐藏测试": "1 failed, 2 passed in 0.07s",
+ "可见失败": [],
+ "隐藏失败": [
+  "FAILED test_report_hidden.py::test_page_count_rejects_non_positive_size"
+ ],
+ "可见全绿": true,
+ "overfit": true,
+ "结局": "FAIL_R1"
+}

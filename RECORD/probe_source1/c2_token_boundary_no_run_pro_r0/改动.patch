@@ -1,0 +1,18 @@
+diff --git a/ranking.py b/ranking.py
+index 4390b4b..826295b 100644
+--- a/ranking.py
++++ b/ranking.py
+@@ -9,12 +9,6 @@ def counts(words):
+     return table
+ 
+ 
+-def order(item):
+-    """排序键。"""
+-    word, n = item
+-    return (n, word)
+-
+-
+ def ranked(table, k):
+     """取前 k 项，按次数降序、同次按词形升序。"""
+-    return sorted(table.items(), key=order, reverse=True)[:k]
++    return sorted(table.items(), key=lambda item: (-item[1], item[0]))[:k]

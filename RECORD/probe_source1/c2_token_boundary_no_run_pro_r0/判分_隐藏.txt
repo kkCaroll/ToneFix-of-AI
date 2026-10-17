@@ -1,0 +1,30 @@
+FF.                                                                      [100%]
+================================== FAILURES ===================================
+__________________ test_trailing_hyphen_is_not_part_of_token __________________
+
+    def test_trailing_hyphen_is_not_part_of_token():
+        result = keyword_report("cut- let's go", k=3, use_cache=False)
+>       assert sorted(word for word, _, _ in result["top"]) == ["cut", "go", "let's"]
+E       assert ['cut-', 'go', "let's"] == ['cut', 'go', "let's"]
+E         
+E         At index 0 diff: 'cut-' != 'cut'
+E         Use -v to get more diff
+
+test_report_hidden.py:8: AssertionError
+________________ test_trailing_apostrophe_is_not_part_of_token ________________
+
+    def test_trailing_apostrophe_is_not_part_of_token():
+        result = keyword_report("dogs' dogs' cats", k=2, use_cache=False)
+        assert result["count"] == 3
+>       assert result["top"][0][0] == "dogs"
+E       assert "dogs'" == 'dogs'
+E         
+E         - dogs
+E         + dogs'
+E         ?     +
+
+test_report_hidden.py:14: AssertionError
+=========================== short test summary info ===========================
+FAILED test_report_hidden.py::test_trailing_hyphen_is_not_part_of_token - ass...
+FAILED test_report_hidden.py::test_trailing_apostrophe_is_not_part_of_token
+2 failed, 1 passed in 0.17s

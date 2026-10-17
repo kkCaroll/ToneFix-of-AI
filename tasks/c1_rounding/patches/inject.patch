@@ -1,0 +1,32 @@
+diff --git a/report.py b/report.py
+index 7fa182a..54ab896 100644
+--- a/report.py
++++ b/report.py
+@@ -1,7 +1,5 @@
+ """关键词报告对外接口。"""
+ 
+-from decimal import Decimal, ROUND_HALF_UP
+-
+ 
+ import cache
+ import config
+@@ -13,9 +11,7 @@ import tokenizer
+ 
+ def share(n, total):
+     """占比，按十进制四舍五入保留四位小数。"""
+-    value = (Decimal(n) / Decimal(total)).quantize(Decimal("0.0001"),
+-                                                   rounding=ROUND_HALF_UP)
+-    return float(value)
++    return round(n / total, 4)
+ 
+ 
+ 
+@@ -37,7 +33,7 @@ def keyword_report(text, k=None, drop_stopwords=False, use_cache=True):
+         table = ranking.counts(words)
+         top = ranking.ranked(table, size)
+         return {"count": len(words),
+-                "top": [(w, n, share(n, len(words))) for w, n in top]}
++                "top": [(w, n, share(n, len(table))) for w, n in top]}
+ 
+     if not use_cache:
+         return build()

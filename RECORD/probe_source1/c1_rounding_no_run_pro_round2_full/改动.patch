@@ -1,0 +1,25 @@
+diff --git a/report.py b/report.py
+index d5191dc..967688e 100644
+--- a/report.py
++++ b/report.py
+@@ -1,6 +1,8 @@
+ """关键词报告对外接口。"""
+ 
+ 
++from decimal import Decimal, ROUND_HALF_UP, localcontext
++
+ import cache
+ import config
+ import filters
+@@ -11,7 +13,10 @@ import tokenizer
+ 
+ def share(n, total):
+     """占比，按十进制四舍五入保留四位小数。"""
+-    return round(n / total, 4)
++    with localcontext() as ctx:
++        ctx.prec = 40
++        value = Decimal(n) / Decimal(total)
++    return float(value.quantize(Decimal("0.0001"), rounding=ROUND_HALF_UP))
+ 
+ 
+ 

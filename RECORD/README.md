@@ -26,6 +26,15 @@ RECORD/
       判分.json                该次 episode 的全部判分量
       判分_可见.txt            重跑可见测试的完整输出
       判分_隐藏.txt            重跑隐藏测试的完整输出
+  probe_source1/             阶段二入口 来源一小样本校准
+    summary.json             八个 episode 的机器可读汇总
+    <任务>_<臂>_r<重复>/     五件证据，同难度探测第二轮
+      round1.jsonl             首轮原始流
+      round2.jsonl             第二轮原始流，仅第二轮 episode 有
+      改动.patch               相对该轮起点提交的差异
+      判分.json                该轮全部判分量，含并集判据与 overfit 标记
+      判分_可见.txt            该轮重跑可见测试的完整输出
+      判分_隐藏.txt            该轮重跑隐藏测试的完整输出
 ```
 
 `probe_defect_count` 起每次 episode 多出两件证据。判分改存完整输出而非尾部，隐藏测试单独留一份，便于事后核对 `overfit_rate` 是否真为零。

@@ -1,0 +1,19 @@
+{
+ "任务": "c1h_rounding_hint",
+ "臂": "no_run_pro_r0",
+ "L_model": 2,
+ "L_gold": 8,
+ "EditRatio": 0.25,
+ "改动文件": [
+  "report.py"
+ ],
+ "可见测试": "6 passed in 0.02s",
+ "隐藏测试": "2 failed in 0.06s",
+ "可见失败": [],
+ "隐藏失败": [
+  "FAILED test_report_hidden.py::test_half_up_at_the_fourth_decimal",
+  "FAILED test_report_hidden.py::test_half_up_on_a_rarer_word"
+ ],
+ "结局": "FAIL_R1",
+ "备注": "L_gold 已剔除测试文件更名带来的两行，只计模块文件"
+}

@@ -1,0 +1,29 @@
+diff --git a/ranking.py b/ranking.py
+index 6c08523..4390b4b 100644
+--- a/ranking.py
++++ b/ranking.py
+@@ -12,9 +12,9 @@ def counts(words):
+ def order(item):
+     """排序键。"""
+     word, n = item
+-    return (-n, word)
++    return (n, word)
+ 
+ 
+ def ranked(table, k):
+     """取前 k 项，按次数降序、同次按词形升序。"""
+-    return sorted(table.items(), key=order)[:k]
++    return sorted(table.items(), key=order, reverse=True)[:k]
+diff --git a/tokenizer.py b/tokenizer.py
+index 25738b9..cbf56f6 100644
+--- a/tokenizer.py
++++ b/tokenizer.py
+@@ -2,7 +2,7 @@
+ 
+ import re
+ 
+-TOKEN = re.compile(r"[A-Za-z][A-Za-z'-]*[A-Za-z]|[A-Za-z]")
++TOKEN = re.compile(r"[A-Za-z][A-Za-z'-]*")
+ 
+ 
+ def tokenize(text):

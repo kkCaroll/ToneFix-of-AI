@@ -1,0 +1,13 @@
+diff --git a/report.py b/report.py
+index 54ab896..d5191dc 100644
+--- a/report.py
++++ b/report.py
+@@ -33,7 +33,7 @@ def keyword_report(text, k=None, drop_stopwords=False, use_cache=True):
+         table = ranking.counts(words)
+         top = ranking.ranked(table, size)
+         return {"count": len(words),
+-                "top": [(w, n, share(n, len(table))) for w, n in top]}
++                "top": [(w, n, share(n, len(words))) for w, n in top]}
+ 
+     if not use_cache:
+         return build()

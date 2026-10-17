@@ -1,0 +1,17 @@
+{
+ "任务": "c1_rounding",
+ "臂": "round2_vague",
+ "重放编辑数": 2,
+ "L_model": 8,
+ "L_gold": 6,
+ "EditRatio": 1.333,
+ "改动文件": [
+  "paging.py",
+  "report.py"
+ ],
+ "可见测试": "6 passed in 0.06s",
+ "隐藏测试": "2 passed in 0.02s",
+ "可见失败": [],
+ "隐藏失败": [],
+ "结局": "PASS_R2"
+}
